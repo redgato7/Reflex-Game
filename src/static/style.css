@@ -1,0 +1,31 @@
+body {
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+header {
+    text-align: center;
+}
+
+.col-sm {
+    text-align: center;
+}
+
+td {
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    margin: 2px;
+    float: left;
+}
+
+.reflex__item--hidden {
+    display: none;
+}
+
+.reflex__tile--bad {
+    background: #A8A8A8
+}
+
+.reflex__tile--good {
+    background: #4BB543;
+}

@@ -1,17 +1,53 @@
 <!DOCTYPE html>
 <html lang="pl">
 
-    <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Reflex</title>
     <link rel="stylesheet" href="style.css">
-    </head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
 
-    <body>
+<body>
+    <header>
         <h1>Reflex Game</h1>
+        <p> Instructions</p>
+        <p id="end">You have to click the green ones.</p>
+        Time
+        <p id="counter">0 seconds.</p>
+        Life
+        <p id="numberOfLives">0 lives.</p>
+        Points
+        <p id="numberOfPoints">0 points.</p>
         <script src="bundle.js"></script>
-    </body>
+        <script src="index.js"></script>
+    </header>
+
+    <div class="container">
+        <div class="row mb-1">
+            <div class="col-sm">
+                <table style="display: inline-block" id="myTable">
+                    <tr id="row_0">
+                        <td class="reflex__item--hidden"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="inputs">
+            Rows <input type="number" name="rows" id="numberOfRows">
+            <br> Columns <input type="number" name="columns" id="numberOfColumns">
+        </div>
+
+        <!-- <button onclick="getTiles()">Create Tiles</button>
+        <br> -->
+        <button id="start-button" onclick="initializingGame()">Start</button>
+        <button onclick="reset()">RESET</button>
+        <!-- <br>
+        <button onclick="showGoodTile()">Change Tile color</button> -->
+    </div>
+
+</body>
 
 </html>
