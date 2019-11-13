@@ -11,41 +11,74 @@
 </head>
 
 <body>
-    <header>
-        <h1>Reflex Game</h1>
-        <p> Instructions</p>
-        <p id="end">You have to click the green ones.</p>
-        Time
-        <p id="counter">0 seconds.</p>
-        Life
-        <p id="numberOfLives">0 lives.</p>
-        Points
-        <p id="numberOfPoints">0 points.</p>
-        <script src="bundle.js"></script>
-        <script src="index.js"></script>
-    </header>
-
+    <script src="bundle.js"></script>
+    <script src="index.js"></script>
     <div class="container">
-        <div class="row mb-1">
+        <div class="row mt-5">
+            <div id="statistics" class="col-sm reflex__item--hidden">  
+                Życia
+                <img class="reflex__icon" src="pics/like.svg">
+                <p id="numberOfLives">−</p>
+                Punkty
+                <img class="reflex__icon" src="pics/dollar.svg">
+                <p id="numberOfPoints">−</p>
+            </div>
             <div class="col-sm">
-                <table style="display: inline-block" id="myTable">
+                <h1>Reflex</h1>
+                <p id="end">Zbieraj punkty klikając w zielony kwadrat.</p>
+            </div>
+            <div id="time_stats" class="col-sm reflex__item--hidden">
+                Czas
+                <img class="reflex__icon" src="pics/clock.svg">
+                <p id="counter">−</p>
+                <p id="warning" class="reflex__item--warning"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <table class="reflex__item" id="table">
                     <tr id="row_0">
                         <td class="reflex__item--hidden"></td>
                     </tr>
                 </table>
             </div>
         </div>
-        <div id="inputs">
-            Rows <input type="number" name="rows" id="numberOfRows">
-            <br> Columns <input type="number" name="columns" id="numberOfColumns">
+        <div class="row" id="inputs">
+            <div class="col-sm">
+                
+            </div>
+            <div class="col-sm">
+                    <label for="numberOfRows">Ilość wierszy</label>
+                    <input onkeyup="this.value = inputMinMax(this.value, 2, 6)" class="form-control" value="2" name="rows" id="numberOfRows">
+                    <br>
+                    <label for="numberOfColumns">Ilość kolumn</label>
+                    <input onkeyup="this.value = inputMinMax(this.value, 2, 6)"  class="form-control" value="2" name="columns" id="numberOfColumns">
+            </div>
+            <div class="col-sm">
+
+            </div>
         </div>
 
-        <!-- <button onclick="getTiles()">Create Tiles</button>
-        <br> -->
-        <button id="start-button" onclick="initializingGame()">Start</button>
-        <button onclick="reset()">RESET</button>
-        <!-- <br>
-        <button onclick="showGoodTile()">Change Tile color</button> -->
+        <div class="row mt-5">
+            <div class="col-sm">
+                    
+            </div>
+            <div class="col-sm">
+                  
+                <button type="button" class="btn btn-primary" id="start" onclick="initializingGame()">Zacznij grę</button>
+                <button type="button" class="btn btn-secondary" onclick="reset()">Reset</button>
+                    
+            </div>
+            <div class="col-sm">
+    
+            </div>
+        </div>
+
+        <footer>
+            <div id="footer" class="reflex__footer mt-5">
+                <a href="https://redgato7.github.io/myPortfolio/">Dawid Zębacki</a>, 2019
+            </div>
+        </footer>
     </div>
 
 </body>
